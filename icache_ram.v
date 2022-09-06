@@ -7,17 +7,18 @@ module icache_ram
 (
     input                    clk,
     input                    rst,
+
     input    [ADDR_BITS-1:0] addr_r_i,
-    input    [WIDTH-1:0]     data_r_o,
+    output    [WIDTH-1:0]    data_r_o,
     
     input    [ADDR_BITS-1:0] addr_w_i,
     input                    we_w_i,
-    output   [WIDTH-1:0]     data_w_i
+    input   [WIDTH-1:0]      data_w_i
 
 );
 
     // (* ram_style = "ultra" *) reg [WIDTH-1:0] ram [2**ADDR_BITS-1:0];
-    reg [WIDTH-1:0] ram [2**ADDR_BITS-1:0];
+    (* ram_style = "block" *) reg [WIDTH-1:0] ram [2**ADDR_BITS-1:0];
 
     reg [WIDTH-1:0] data_o_r;
 
@@ -29,7 +30,7 @@ module icache_ram
         data_o_r <= ram[addr_r_i];
     end
 
-    assign data_o = data_o_r;
+    assign data_r_o = data_o_r;
 
 endmodule
 
