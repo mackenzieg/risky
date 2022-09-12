@@ -31,22 +31,22 @@ icache icache_dut (
     .req_data           (req_data),
 
     .axi_arready        (1'b1),     
-    .axi_arid,          ()
-    .axi_araddr,      
-    .axi_arlen,       
-    .axi_arsize,      
-    .axi_arburst,     
-    .axi_arlock,      
-    .axi_arcache,     
-    .axi_arprot,      
-    .axi_arvalid,     
+    .axi_arid,          (),
+    .axi_araddr         (),      
+    .axi_arlen          (),       
+    .axi_arsize         (),      
+    .axi_arburst        (),     
+    .axi_arlock         (),      
+    .axi_arcache        (),     
+    .axi_arprot         (),      
+    .axi_arvalid        (),     
 
-    .axi_rid,         
-    .axi_rresp,       
-    .axi_rvalid,      
-    .axi_rdata,       
-    .axi_rlast,       
-    .axi_rready       
+    .axi_rid            (),         
+    .axi_rresp          (),       
+    .axi_rvalid         (),      
+    .axi_rdata          (),       
+    .axi_rlast          (),       
+    .axi_rready         (),
 );
 
 `ifndef XIL_TIMING
